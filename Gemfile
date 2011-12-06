@@ -7,6 +7,7 @@ gem 'rails', '3.1.1'
 
 gem 'sqlite3'
 gem 'omniauth'
+gem 'omniauth-twitter'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -17,6 +18,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+# Use newer gem from github that has a fix for the "undefined method `namespace' for main:Object" error
+gem 'annotate', :git => "https://github.com/ctran/annotate_models.git"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
