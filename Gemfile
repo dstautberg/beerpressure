@@ -11,7 +11,8 @@ gem 'uglifier', '>= 1.0.3'
 
 group :development do
   # Use newer gem from github that has a fix for the "undefined method `namespace' for main:Object" error
-  gem 'annotate', :git => "https://github.com/ctran/annotate_models.git" 
+  # Note: This seems to be causing problems on heroku.  Uncomment it to run annotations locally.
+  # gem 'annotate', :git => "https://github.com/ctran/annotate_models.git" 
   gem 'sqlite3'
 end
 
