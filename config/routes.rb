@@ -4,6 +4,7 @@ Beerpressure::Application.routes.draw do
 	
 	# This gets called by omniauth after a user is authenticated
 	match '/auth/:provider/callback', :to => 'sessions#create'
+  match "/auth/failure", :to => "sessions#failure"
 
   match '/logout', :to => 'sessions#destroy' 
 
