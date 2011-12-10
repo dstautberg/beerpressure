@@ -12,8 +12,10 @@
 	<div>Welcome to Beer Pressure</div>
 	<% if @user %>
 		<div>You are logged in as <%= @user.name %></div>
+		<div><%= link_to "Create an Event", new_event_path %></div>
 		<div><%= link_to "Logout", :controller => :sessions, :action => :destroy %></div>
 	<% else %>
+		<div>You must login to create an event</div>
 		<div><%= link_to "Login using Twitter", "/auth/twitter" %></div>
 		<% if show_developer_login? %>
 			<div><%= link_to "Login as a developer", "/auth/developer" %></div>

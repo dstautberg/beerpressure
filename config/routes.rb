@@ -1,12 +1,14 @@
 Beerpressure::Application.routes.draw do 
 
   root :to => 'dashboard#index'
-	
+
 	# This gets called by omniauth after a user is authenticated
 	match '/auth/:provider/callback', :to => 'sessions#create'
   match "/auth/failure", :to => "sessions#failure"
 
-  match '/logout', :to => 'sessions#destroy' 
+  match '/logout', :to => 'sessions#destroy'
+
+	resources :events
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

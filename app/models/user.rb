@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :events
 
   def self.find_or_create_from_auth_hash(hash)
     Rails.logger.debug "\n"
