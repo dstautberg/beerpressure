@@ -9,22 +9,28 @@
 </head>
 <body>
 
-<div id="header">
-	<div>Welcome to Beer Pressure</div>
-	<% if @user %>
-		<div>You are logged in as <%= @user.name %></div>
-		<div><%= link_to "Create an Event", new_event_path %></div>
-		<div><%= link_to "Logout", :controller => :sessions, :action => :destroy %></div>
-	<% else %>
-		<div>You must login to create an event</div>
-		<div><%= link_to "Login using Twitter", "/auth/twitter" %></div>
-		<% if show_developer_login? %>
-			<div><%= link_to "Login as a developer", "/auth/developer" %></div>
-		<% end %>
-	<% end%>
+<div class="container-fluid">
+	<div class="sidebar">
+		<h3>Beer Pressure</h3>
+		<% if @user %>
+			<div>You are logged in as <%= @user.name %></div>
+			<br/>
+			<div><%= link_to "Create an Event", new_event_path, :class => "btn small" %></div>
+			<br/>
+			<div><%= link_to("Logout", url_for(:controller => :sessions, :action => :destroy), :class => "btn small") %></div>
+		<% else %>
+			<div>You must login to create an event</div>
+			<br/>
+			<div><%= link_to "Login using Twitter", "/auth/twitter", :class => "btn small" %></div>
+			<br/>
+			<% if show_developer_login? %>
+				<div><%= link_to "Login as a developer", "/auth/developer", :class => "btn small" %></div>
+			<% end %>
+		<% end%>
+	</div>
+	<div class="content">
+		<%= yield %>
+	</div>
 </div>
-
-<%= yield %>
-
 </body>
 </html>
