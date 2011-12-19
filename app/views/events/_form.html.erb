@@ -28,10 +28,10 @@
     <%= f.datetime_select :end %>
   </div>
   <div class="field">
-	<div>People to invite. Enter emails separated by spaces or commas</div>
+	<h5>People to invite. Enter emails separated by spaces or commas</h5>
 	<%= f.text_area :invitee_string, :cols => 120, :rows => 4 %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :value => "  Save  " %>
   </div>
 <% end %>
