@@ -49,6 +49,7 @@ GEM
       railties (~> 3.0)
       thor (~> 0.14)
     json (1.6.1)
+    json_pure (1.6.3)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -125,6 +126,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.1.1)
   jquery-rails
+  json_pure
   omniauth
   omniauth-twitter
   pg

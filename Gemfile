@@ -6,6 +6,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'jquery-rails'
 gem 'sass-rails',   '~> 3.1.4'
+gem 'json_pure'
 gem 'coffee-rails', '~> 3.1.1'
 gem 'uglifier', '>= 1.0.3'
 
