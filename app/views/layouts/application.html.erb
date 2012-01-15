@@ -9,28 +9,24 @@
 </head>
 <body>
 
+<div class="topbar">
+<!--	<h3><%= image_tag "th_beer.gif" %> Beer Pressure <%= image_tag "th_beer.gif" %></h3> -->
+	<%= image_tag "BeerPressureLogo1.gif" %>
+</div>
+
 <div class="container-fluid">
 	<div class="sidebar">
-		<h3>Beer Pressure</h3>
 		<% if @user %>
-			<div>You are logged in as <%= @user.name %></div>
-			<br/>
-			<div><%= link_to "Create an Event", new_event_path, :class => "btn small" %></div>
-			<br/>
-			<div><%= link_to("Logout", url_for(:controller => :sessions, :action => :destroy), :class => "btn small") %></div>
+			<div class="label">You are logged in as <%= @user.name %></span>
+			<div><%= link_to "Create an Event", new_event_path %></div>
+			<div><%= link_to "Logout", :controller => :sessions, :action => :destroy %></div>
 		<% else %>
 			<div>You must login to create an event</div>
-			<br/>
-			<div><%= link_to "Login using Twitter", "/auth/twitter", :class => "btn small" %></div>
-			<br/>
+			<div><%= link_to "Login using Twitter", "/auth/twitter" %></div>
 			<% if show_developer_login? %>
-				<div><%= link_to "Login as a developer", "/auth/developer", :class => "btn small" %></div>
+				<div><%= link_to "Login as a developer", "/auth/developer" %></div>
 			<% end %>
 		<% end%>
-		
-		<!-- List events that have been recently viewed (past 30 days?) -->
-		<!-- Store them in a cookie if the user has not logged in -->
-		
 	</div>
 	<div class="content">
 		<%= yield %>
