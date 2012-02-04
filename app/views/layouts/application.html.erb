@@ -10,27 +10,26 @@
 <body>
 
 <div class="topbar">
-<!--	<h3><%= image_tag "th_beer.gif" %> Beer Pressure <%= image_tag "th_beer.gif" %></h3> -->
-	<%= image_tag "BeerPressureLogo1.gif" %>
+  <div class="topbar-inner">
+    <div class="container">
+      <a class="brand" href="/">Beer Pressure</a>
+      <ul class="nav">
+        <li class="active"><a href="/">Home</a></li>
+		<li><a href="/events">Show Happy Hours</a></li>
+		<li><a href="/events/new">Create a new Happy Hour</a></li>
+      </ul>
+	  <% if @user %>
+        <p class="pull-right">Logged in as <%= @user.name %></p>
+	  <% else %>
+	    <p class="pull-right">Click to Login</p>
+	  <% end %>
+    </div>
+  </div>
 </div>
 
-<div class="container-fluid">
-	<div class="sidebar">
-		<% if @user %>
-			<div class="label">You are logged in as <%= @user.name %></span>
-			<div><%= link_to "Create an Event", new_event_path %></div>
-			<div><%= link_to "Logout", :controller => :sessions, :action => :destroy %></div>
-		<% else %>
-			<div>You must login to create an event</div>
-			<div><%= link_to "Login using Twitter", "/auth/twitter" %></div>
-			<% if show_developer_login? %>
-				<div><%= link_to "Login as a developer", "/auth/developer" %></div>
-			<% end %>
-		<% end%>
-	</div>
-	<div class="content">
-		<%= yield %>
-	</div>
+<div class="content">
+    <%= yield %>
 </div>
+
 </body>
 </html>
