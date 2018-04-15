@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 4.1.11'
+gem 'rails', '~> 4.2.5.1'
 gem 'pg'
 gem 'omniauth', '~> 1.3.2'
 gem 'omniauth-twitter'
