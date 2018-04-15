@@ -1,13 +1,13 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.2.0'
+gem 'rails', '~> 4.1.11'
 gem 'pg'
-gem 'omniauth'
+gem 'omniauth', '~> 1.3.2'
 gem 'omniauth-twitter'
 gem 'jquery-rails'
-gem 'sass-rails',   '~> 3.2.0'
+gem 'sass-rails'
 gem 'json_pure'
-gem 'coffee-rails', '~> 3.2.0'
+gem 'coffee-rails'
 gem 'uglifier', '>= 1.0.3'
 
 group :development do

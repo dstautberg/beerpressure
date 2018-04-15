@@ -3,10 +3,10 @@ Beerpressure::Application.routes.draw do
   root :to => 'dashboard#index'
 
 	# This gets called by omniauth after a user is authenticated
-	match '/auth/:provider/callback', :to => 'sessions#create'
-  match "/auth/failure", :to => "sessions#failure"
+	match '/auth/:provider/callback', :to => 'sessions#create', via: [:get, :post]
+  match "/auth/failure", :to => "sessions#failure", via: [:get, :post]
 
-  match '/logout', :to => 'sessions#destroy'
+  match '/logout', :to => 'sessions#destroy', via: [:get, :post]
 
 	resources :events
 
